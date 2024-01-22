@@ -21,3 +21,13 @@ spring:
     username: root
     password: root
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: given-provider
+
+info:
+  app.name: provider-8001
+  any.thing: anything

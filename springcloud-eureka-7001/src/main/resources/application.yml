@@ -5,6 +5,9 @@ server:
 eureka:
   instance:
     hostname: center
+    instance-id: given-eureka-center
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka
