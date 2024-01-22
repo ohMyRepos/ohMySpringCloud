@@ -1,5 +1,6 @@
 package co.zhanglintc.springcloudconsumer.controller;
 
+import co.zhanglintc.springcloudconsumer.openfeign.OpenFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,21 +11,17 @@ import java.util.Map;
 
 @RestController
 public class IndexController {
-
-    // private static final String PROVIDER_BASE_URL = "http://localhost:8001";
-    private static final String PROVIDER_BASE_URL = "http://SPRING-CLOUD-PROVIDER";
-
     @Autowired
-    private RestTemplate restTemplateLB;
+    OpenFeignService openFeignService;
 
     @RequestMapping("/")
     public Object index() {
         Map<String, Object> restResult = new LinkedHashMap<>();
 
-        restResult.put("type", "eureka");
-        restResult.put("port", 9001);
+        restResult.put("type", "openfeign");
+        restResult.put("port", 9002);
 
-        Object provider = restTemplateLB.getForObject(PROVIDER_BASE_URL + "/", Object.class);
+        Object provider = openFeignService.openFeignIndex();
         restResult.put("provider", provider);
 
         RestTemplate mmrzTemplate = new RestTemplate();
