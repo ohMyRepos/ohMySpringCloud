@@ -12,7 +12,7 @@ import java.util.Map;
 public class IndexController {
 
     // private static final String PROVIDER_BASE_URL = "http://localhost:8001";
-    private static final String PROVIDER_BASE_URL = "http://SPRING-CLOUD-PROVIDER-8001";
+    private static final String PROVIDER_BASE_URL = "http://SPRING-CLOUD-PROVIDER";
 
     @Autowired
     private RestTemplate restTemplateLB;
