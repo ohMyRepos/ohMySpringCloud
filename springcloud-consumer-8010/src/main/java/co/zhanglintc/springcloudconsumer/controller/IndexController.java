@@ -11,19 +11,21 @@ import java.util.Map;
 @RestController
 public class IndexController {
 
-    private static final String PROVIDER_BASE_URL = "http://localhost:8001";
+    // private static final String PROVIDER_BASE_URL = "http://localhost:8001";
+    private static final String PROVIDER_BASE_URL = "http://SPRING-CLOUD-PROVIDER-8001";
 
     @Autowired
-    private RestTemplate restTemplate;
+    private RestTemplate restTemplateLB;
 
     @RequestMapping("/")
     public Object index() {
         Map<String, Object> restResult = new LinkedHashMap<>();
 
-        Object provider = restTemplate.getForObject(PROVIDER_BASE_URL + "/", Object.class);
+        Object provider = restTemplateLB.getForObject(PROVIDER_BASE_URL + "/", Object.class);
         restResult.put("provider", provider);
 
-        Object randomWords = restTemplate.getForObject(
+        RestTemplate mmrzTemplate = new RestTemplate();
+        Object randomWords = mmrzTemplate.getForObject(
                 "https://mmrz.zhanglintc.co/api/v1/misc/random_words?limit=3",
                 Object.class
         );

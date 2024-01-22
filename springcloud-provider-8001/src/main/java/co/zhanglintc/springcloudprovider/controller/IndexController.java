@@ -19,7 +19,7 @@ public class IndexController {
     public Object index() {
         Map<String, Object> restResult = new HashMap<>();
 
-        Student student = new Student(111L, null, 22, "");
+        Student student = new Student(8001L, null, 22, "");
         studentDao.insert(student);
         restResult.put("selectMaps", studentDao.selectMaps(null));
         studentDao.delete(null);

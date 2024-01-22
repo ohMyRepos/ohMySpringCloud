@@ -12,7 +12,7 @@
   <modules>
     <module>springcloud-api</module>
     <module>springcloud-provider-8001</module>
-    <module>springcloud-consumer-8002</module>
+    <module>springcloud-consumer-8010</module>
     <module>springcloud-eureka-7001</module>
     <module>springcloud-eureka-7002</module>
   </modules>
