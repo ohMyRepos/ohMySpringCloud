@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active:
+      - dev
+
+---
+
+server:
+  port: 3355
+
+spring:
+  profiles: dev
+  application:
+    name: spring-cloud-config-dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://127.0.0.1:7002/eureka
+  instance:
+    instance-id: given-cloud-config-client-dev-3355
+
+info:
+  app.name: cloud-config-client-3355
+  any.thing: anything
+  type: dev
+
+---
+
+server:
+  port: 3377
+
+spring:
+  profiles: test
+  application:
+    name: spring-cloud-config-test
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://127.0.0.1:7002/eureka
+  instance:
+    instance-id: given-cloud-config-client-test-3355
+
+info:
+  app.name: cloud-config-client-3355
+  any.thing: anything
+  type: test
