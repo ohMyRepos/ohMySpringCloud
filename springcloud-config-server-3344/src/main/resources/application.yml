@@ -1,0 +1,12 @@
+server:
+  address: 0.0.0.0
+  port: 3344
+
+spring:
+  application:
+    name: spring-cloud-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/zhanglintc/ohMyConfigRepo.git
