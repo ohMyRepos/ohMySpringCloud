@@ -10,3 +10,15 @@ spring:
       server:
         git:
           uri: https://gitee.com/zhanglintc/ohMyConfigRepo.git
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://127.0.0.1:7002/eureka
+  instance:
+    instance-id: given-cloud-config-server-3344
+
+info:
+  app.name: cloud-config-server-3344
+  any.thing: anything
+  type: server
