@@ -5,3 +5,12 @@ server:
 spring:
   application:
     name: spring-cloud-config-local-client
+
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
