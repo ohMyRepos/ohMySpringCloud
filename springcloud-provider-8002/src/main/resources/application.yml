@@ -28,6 +28,18 @@ eureka:
   instance:
     instance-id: given-provider-8002
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - "*"
+  info:
+    env:
+      enabled: true
+
 info:
   app.name: provider-8002
   any.thing: anything

@@ -18,7 +18,20 @@ eureka:
   instance:
     instance-id: given-cloud-config-server-3344
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - "*"
+  info:
+    env:
+      enabled: true
+
 info:
   app.name: cloud-config-server-3344
   any.thing: anything
   type: server
+  eg: http://localhost:3344/config-client/dev

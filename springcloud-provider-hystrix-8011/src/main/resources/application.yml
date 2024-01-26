@@ -24,6 +24,18 @@ eureka:
   instance:
     instance-id: given-provider-hystrix-8011
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - "*"
+  info:
+    env:
+      enabled: true
+
 info:
   app.name: provider-hystrix-8011
   any.thing: anything

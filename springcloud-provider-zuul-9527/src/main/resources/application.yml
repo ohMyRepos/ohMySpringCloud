@@ -33,9 +33,22 @@ zuul:
     - "*"
   prefix: /cloud
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - "*"
+  info:
+    env:
+      enabled: true
+
 info:
   app.name: provider-zuul-9527
   any.thing: anything
   url.ignored: http://localhost:9527/cloud/spring-cloud-provider
   url.current: http://localhost:9527/cloud/provider
+  url.notice: "Zuul not compatible with 'spring-cloud-dependencies-version-2021.0.2' and 'spring-boot-dependencies-version-2.6.7' anymore"
 
